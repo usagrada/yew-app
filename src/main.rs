@@ -2,6 +2,7 @@ use yew::prelude::*;
 
 enum Msg {
     AddOne,
+    SubOne
 }
 
 struct Model {
@@ -30,6 +31,10 @@ impl Component for Model {
                 // re-render for it to appear on the page
                 true
             }
+            Msg::SubOne => {
+                self.value -= 1;
+                true
+            }
         }
     }
 
@@ -44,6 +49,7 @@ impl Component for Model {
         html! {
             <div>
                 <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
+                <button onclick=self.link.callback(|_| Msg::SubOne)>{ "-1" }</button>
                 <p>{ self.value }</p>
             </div>
         }
