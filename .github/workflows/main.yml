@@ -28,6 +28,11 @@ jobs:
       # Runs a single command using the runners shell
 #       - name: Run a one-line script
 #         run: echo Hello, world!
+      - name: Cargo Build
+        run: cargo build --verbose
+
+#       - name: Cargo Run tests
+#         run: cargo test --verbose
 
       # Runs a set of commands using the runners shell
       - uses: jetli/trunk-action@v0.1.0
