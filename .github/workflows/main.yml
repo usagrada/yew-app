@@ -24,6 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Cache rust modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-rust-modules
 
       # Runs a single command using the runners shell
 #       - name: Run a one-line script
@@ -42,6 +46,12 @@ jobs:
       
       - name: wasm-build
         run: trunk build --release
+      
+      - name: check dir
+        run: ls -a
+
+      - name: Echo Finish
+        run: echo "Finished!!"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
