@@ -1,19 +1,18 @@
 use yew::prelude::*;
-pub mod components;
 
-enum Msg {
+pub enum Msg {
     AddOne,
     SubOne,
 }
 
-struct Model {
+pub struct Sample {
     // `ComponentLink` is like a reference to a component.
     // It can be used to send messages to the component
     link: ComponentLink<Self>,
     value: i64,
 }
 
-impl Component for Model {
+impl Component for Sample {
     type Message = Msg;
     type Properties = ();
 
@@ -46,16 +45,8 @@ impl Component for Model {
     fn view(&self) -> Html {
         html! {
             <div>
-                <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
-                <button onclick=self.link.callback(|_| Msg::SubOne)>{ "-1" }</button>
-                <p class="main--area">{ self.value }</p>
-                <components::sample::Sample />
-                <components::todo::Todo />
+                {"this is sample component"}
             </div>
         }
     }
-}
-
-fn main() {
-    yew::start_app::<Model>();
 }
