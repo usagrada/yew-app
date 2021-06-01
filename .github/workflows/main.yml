@@ -45,7 +45,7 @@ jobs:
           version: 'latest'
 
       - name: wasm-build
-        run: trunk build
+        run: trunk serve
       
       - name: check dir
         run: ls -a
