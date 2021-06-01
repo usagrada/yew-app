@@ -37,12 +37,15 @@ jobs:
         with:
           toolchain: stable
           target: wasm32-unknown-unknown
+      
+      - name: Setup Rust
+        run: cargo install trunk wasm-bindgen-cli
           
       # Runs a set of commands using the runners shell
-      - uses: jetli/trunk-action@v0.1.0
-        with:
+      # - uses: jetli/trunk-action@v0.1.0
+        # with:
           # Optional version of trunk to install(eg. 'v0.8.1', 'latest')
-          version: 'latest'
+          # version: 'latest'
 
       - name: wasm-build
         run: trunk build --release
