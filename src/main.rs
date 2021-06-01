@@ -49,7 +49,6 @@ impl Component for Model {
                 <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
                 <button onclick=self.link.callback(|_| Msg::SubOne)>{ "-1" }</button>
                 <p class="main--area">{ self.value }</p>
-                <components::sample::Sample />
                 <components::todo::Todo />
             </div>
         }
