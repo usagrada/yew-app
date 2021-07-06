@@ -1,3 +1,4 @@
+use super::layout::Header;
 use yew::prelude::*;
 
 pub struct App {
@@ -26,7 +27,10 @@ impl Component for App {
 
     fn view(&self) -> Html {
         html! {
+            <>
+            <Header/>
             <crate::route::Route />
+            </>
         }
     }
 }

@@ -1,11 +1,11 @@
 use yew::prelude::*;
 
-pub struct WebGPUPage {
+pub struct AboutPage {
 	// props: Props,
 	_link: ComponentLink<Self>,
 }
 
-impl Component for WebGPUPage {
+impl Component for AboutPage {
 	type Message = ();
 	type Properties = ();
 
@@ -27,7 +27,7 @@ impl Component for WebGPUPage {
 	fn view(&self) -> Html {
 		html! {
 			<>
-			<h1>{"WebGPU Page"}</h1>
+			<h1>{"About Page"}</h1>
 			<section>
 				<div>{"wgpu を使って 何かしようとして build で詰まったので，何もないページ"}</div>
 			</section>

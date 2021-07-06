@@ -1,5 +1,6 @@
 mod app;
 mod route;
+mod layout;
 use app::App;
 
 fn main() {

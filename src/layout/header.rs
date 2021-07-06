@@ -1,11 +1,13 @@
 use yew::prelude::*;
+use yew_router::prelude::*;
+use crate::route::MyRoute;
 
-pub struct WebGPUPage {
+pub struct Header {
 	// props: Props,
 	_link: ComponentLink<Self>,
 }
 
-impl Component for WebGPUPage {
+impl Component for Header {
 	type Message = ();
 	type Properties = ();
 
@@ -26,12 +28,17 @@ impl Component for WebGPUPage {
 
 	fn view(&self) -> Html {
 		html! {
-			<>
-			<h1>{"WebGPU Page"}</h1>
-			<section>
-				<div>{"wgpu を使って 何かしようとして build で詰まったので，何もないページ"}</div>
-			</section>
-			</>
+			<header>
+				<Link<MyRoute> classes=classes!("navbar-item") route=MyRoute::Home>
+					{ "Home" }
+				</Link<MyRoute>>
+				<Link<MyRoute> classes=classes!("navbar-item") route=MyRoute::Todo>
+					{ "Todo" }
+				</Link<MyRoute>>
+				<Link<MyRoute> classes=classes!("navbar-item") route=MyRoute::WebGpu>
+					{ "WebGPU?" }
+				</Link<MyRoute>>
+			</header>
 		}
 	}
 }

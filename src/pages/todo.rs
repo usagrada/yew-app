@@ -1,11 +1,12 @@
 use yew::prelude::*;
+use crate::components::todo::Todo;
 
-pub struct WebGPUPage {
+pub struct TodoPage {
 	// props: Props,
 	_link: ComponentLink<Self>,
 }
 
-impl Component for WebGPUPage {
+impl Component for TodoPage {
 	type Message = ();
 	type Properties = ();
 
@@ -27,9 +28,9 @@ impl Component for WebGPUPage {
 	fn view(&self) -> Html {
 		html! {
 			<>
-			<h1>{"WebGPU Page"}</h1>
+			<h1>{"Todo Page"}</h1>
 			<section>
-				<div>{"wgpu を使って 何かしようとして build で詰まったので，何もないページ"}</div>
+				<Todo />
 			</section>
 			</>
 		}

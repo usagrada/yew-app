@@ -1,6 +1,6 @@
 // use crate::layout::Layout;
 extern crate yewapp;
-use yewapp::pages::webgpu::WebGPUPage;
+use yewapp::pages::{webgpu::WebGPUPage, todo::TodoPage};
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -10,6 +10,8 @@ pub enum MyRoute {
 	Home,
     #[at("/web-gpu")]
     WebGpu,
+	#[at("/todo")]
+ 	Todo,
 	#[not_found]
 	#[at("/404")]
 	NotFound,
@@ -53,6 +55,11 @@ fn switch(routes: &MyRoute) -> Html {
                 <WebGPUPage/>
             }
         }
+		MyRoute::Todo => {
+			html! {
+				<TodoPage />
+			}
+		}
 		_ => {
 			html! {<div>{"404 Not Found"}</div>}
 		}
